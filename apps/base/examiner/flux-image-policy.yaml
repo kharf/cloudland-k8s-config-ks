@@ -1,7 +1,11 @@
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
+metadata:
+  name: app
 spec:
+  imageRepositoryRef:
+    name: examiner-app
   policy:
     semver:
       range: "~1.10"

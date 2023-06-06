@@ -1,13 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
+metadata:
+  name: app
 spec:
   template:
     spec:
       containers:
         - name: examiner
+          envFrom:
+            - configMapRef:
+                name: examiner-env
           securityContext:
             allowPrivilegeEscalation: false
           ports:
             - name: http
               containerPort: 8080
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /.well-known/live
+              port: 8080
+          readinessProbe:
+            httpGet:
+              path: /.well-known/ready
+              port: 8080
+

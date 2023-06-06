@@ -8,6 +8,9 @@ spec:
     spec:
       containers:
         - name: app
+          envFrom:
+            - configMapRef:
+                name: podinfo-env
           livenessProbe:
             initialDelaySeconds: 10
             periodSeconds: 10

@@ -21,10 +21,6 @@ spec:
                 - NET_BIND_SERVICE
           image: app 
           imagePullPolicy: IfNotPresent
-          ports:
-            - name: http
-              containerPort: 9898
-              protocol: TCP
           livenessProbe:
             initialDelaySeconds: 10
             periodSeconds: 10

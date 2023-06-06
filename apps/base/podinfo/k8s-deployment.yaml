@@ -11,6 +11,10 @@ spec:
           envFrom:
             - configMapRef:
                 name: podinfo-env
+          ports:
+            - name: http
+              containerPort: 9898
+              protocol: TCP
           livenessProbe:
             exec:
              command:

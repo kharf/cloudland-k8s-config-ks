@@ -4,6 +4,8 @@ kind: ImagePolicy
 metadata:
   name: app
 spec:
+  imageRepositoryRef:
+    name: podinfo-app
   policy:
     semver:
       range: "~6"

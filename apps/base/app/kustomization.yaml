@@ -8,5 +8,4 @@ resources:
 - k8s-pod-disruption-budget.yaml
 - k8s-service.yaml
 - k8s-ingress.yaml
-- flux-image-policy.yaml
 - flux-image-repository.yaml

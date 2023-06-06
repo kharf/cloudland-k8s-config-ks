@@ -12,6 +12,7 @@ spec:
   path: "./infrastructure"
   prune: true
   timeout: 1m
+  wait: true
   postBuild:
     substitute:
       ingress_nginx_version: "~4"

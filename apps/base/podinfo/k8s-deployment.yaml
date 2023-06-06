@@ -9,23 +9,11 @@ spec:
       containers:
         - name: app
           livenessProbe:
-            exec:
-              command:
-              - podcli
-              - check
-              - http
-              - localhost:9898/healthz
             initialDelaySeconds: 10
             periodSeconds: 10
             failureThreshold: 3
             timeoutSeconds: 5
           readinessProbe:
-            exec:
-              command:
-              - podcli
-              - check
-              - http
-              - localhost:9898/readyz
             initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 5

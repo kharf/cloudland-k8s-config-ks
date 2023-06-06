@@ -34,8 +34,8 @@ flux_arch = $(os)_$(arch)
 flux_location = $(binary_location)/flux
 
 ### leave empty for enforcing docker even if podman was available
-# kind_podman =
-kind_podman = $(shell which podman > /dev/null && echo "KIND_EXPERIMENTAL_PROVIDER=podman" || echo "")
+kind_podman =
+# kind_podman = $(shell which podman > /dev/null && echo "KIND_EXPERIMENTAL_PROVIDER=podman" || echo "")
 
 kind_cmd = $(kind_podman) $(kind_location)
 

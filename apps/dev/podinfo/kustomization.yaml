@@ -7,7 +7,8 @@ resources:
 configMapGenerator:
 - name: podinfo-env
   literals:
-  - ECHO_VALUE="🎢 CloudLand 2023 R0ckX 🎸"
+  - PODINFO_UI_MESSAGE="🎢 CloudLand 2023 R0ckX hard 🎸"
+  - PODINFO_BACKEND_URL="http://podinfo-app.apps/echo"
 replicas:
   - name: app
     count: 1

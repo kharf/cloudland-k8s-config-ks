@@ -6,7 +6,7 @@ spec:
   template:
     spec:
       containers:
-        - name: examiner
+        - name: app
           envFrom:
             - configMapRef:
                 name: examiner-env

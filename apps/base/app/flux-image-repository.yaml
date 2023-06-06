@@ -4,5 +4,4 @@ kind: ImageRepository
 metadata:
   name: app
 spec:
-  image: app
   interval: "10m0s"

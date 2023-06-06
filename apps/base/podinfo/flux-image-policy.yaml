@@ -2,7 +2,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImagePolicy
 metadata:
-  name: app
+  name: podinfo-app
 spec:
   imageRepositoryRef:
     name: podinfo-app

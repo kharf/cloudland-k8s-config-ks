@@ -26,17 +26,11 @@ spec:
               containerPort: 9898
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: /.well-known/live
-              port: 8080
             initialDelaySeconds: 10
             periodSeconds: 10
             failureThreshold: 3
             timeoutSeconds: 5
           readinessProbe:
-            httpGet:
-              path: /.well-known/ready
-              port: 8080
             initialDelaySeconds: 10
             periodSeconds: 10
             timeoutSeconds: 5

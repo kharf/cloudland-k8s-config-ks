@@ -13,3 +13,4 @@ patchesStrategicMerge:
 - k8s-deployment.yaml
 - k8s-ingress.yaml
 - flux-image-repository.yaml
+- k8s-network-policies.yaml

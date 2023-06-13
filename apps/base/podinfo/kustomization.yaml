@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namePrefix: podinfo-
+labels:
+- pairs:
+    app.kubernetes.io/name: podinfo
+  includeSelectors: true
+resources:
+- ../app
+- flux-image-policy.yaml
+patchesStrategicMerge:
+- k8s-deployment.yaml
+- k8s-service.yaml
+- k8s-ingress.yaml
+- flux-image-repository.yaml

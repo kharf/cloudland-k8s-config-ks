@@ -1,0 +1,16 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: apps
+resources:
+- ../../base/examiner/
+configMapGenerator:
+- name: examiner-env
+  literals:
+  - ECHO_VALUE="🎢 CloudLand 2023 R0ckX 🎸"
+replicas:
+  - name: app
+    count: 2
+images:
+  - name: app
+    newName: "quay.io/heubeck/examiner:1.10.1" # {"$imagepolicy": "apps:examiner-app"}

@@ -1,3 +1,4 @@
+SHELL := /bin/bash
 ### the location where the necessary cli binaries are stored
 binary_location = ${HOME}/.fks
 

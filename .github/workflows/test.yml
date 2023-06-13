@@ -34,6 +34,18 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
+      - run: |
+          cat <<EOF | sudo tee /etc/default/grub
+          GRUB_CMDLINE_LINUX="systemd.unified_cgroup_hierarchy=1"
+          EOF
+          sudo update-grub
+          sudo mkdir -p /etc/systemd/system/user@.service.d
+          cat <<EOF | sudo tee /etc/systemd/system/user@.service.d/delegate.conf
+          [Service]
+          Delegate=yes
+          EOF
+          sudo systemctl daemon-reload
+
       - run: make prepare
 
       - run: make pre-check

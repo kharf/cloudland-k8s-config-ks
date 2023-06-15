@@ -14,3 +14,10 @@ patchesStrategicMerge:
 - k8s-ingress.yaml
 - flux-image-repository.yaml
 - k8s-network-policies.yaml
+patches:
+- target:
+    kind: NetworkPolicy
+    name: app
+  patch:
+    - op: remove
+      path: /spec/egress

@@ -5,6 +5,3 @@ metadata:
   name: app
 spec:
   maxUnavailable: 50%
-  selector:
-    matchLabels:
-      app.kubernetes.io/name: app

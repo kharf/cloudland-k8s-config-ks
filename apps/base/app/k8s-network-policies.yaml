@@ -4,9 +4,6 @@ kind: NetworkPolicy
 metadata:
   name: app
 spec:
-  podSelector:
-    matchLabels:
-      app.kubernetes.io/name: app
   policyTypes:
     - Ingress
     - Egress

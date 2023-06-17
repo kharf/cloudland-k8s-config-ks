@@ -129,7 +129,7 @@ endif
 		--owner=$(gitops_repo_owner) \
 		--repository=$(gitops_repo_name) \
 		--branch=$(gitops_branch) \
-		--path=$(cluster_name)
+		--path=$(cluster_name)/dev
 	#
 	# Configuring GitHub commit status notification
 	@$(kubectl_location) create secret generic -n flux-system github --from-literal token=${GITHUB_TOKEN} --save-config --dry-run=client -o yaml | $(kubectl_location) apply -f -

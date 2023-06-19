@@ -1,4 +1,3 @@
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: apps
@@ -7,12 +6,12 @@ resources:
 configMapGenerator:
 - name: podinfo-env
   literals:
-  - PODINFO_UI_MESSAGE="🎢 CloudLand 2023 R0ckX hard 🎸"
+  - "PODINFO_UI_MESSAGE=\"\U0001F3A2 CloudLand 2023 R0ckX hard \U0001F3B8\""
   - PODINFO_BACKEND_URL="http://podinfo-app.apps/echo"
 replicas:
-  - name: app
-    count: 1
+- name: app
+  count: 1
 images:
-  - name: app
-    newName: "ghcr.io/stefanprodan/podinfo" # {"$imagepolicy": "apps:podinfo-app:name"}
-    newTag: 6.3.5 # {"$imagepolicy": "apps:podinfo-app:tag"}
+- name: app
+  newName: "ghcr.io/stefanprodan/podinfo" # {"$imagepolicy": "apps:podinfo-app:name"}
+  newTag: 6.3.6 # {"$imagepolicy": "apps:podinfo-app:tag"}

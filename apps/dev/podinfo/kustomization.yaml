@@ -14,4 +14,5 @@ replicas:
     count: 1
 images:
   - name: app
-    newName: "ghcr.io/stefanprodan/podinfo:6.3.6" # {"$imagepolicy": "apps:podinfo-app"}
+    newName: "ghcr.io/stefanprodan/podinfo" # {"$imagepolicy": "apps:podinfo-app:name"}
+    newTag: 6.3.6 # {"$imagepolicy": "apps:podinfo-app:tag"}

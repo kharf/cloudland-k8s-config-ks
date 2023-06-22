@@ -1,4 +1,3 @@
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: apps
@@ -7,14 +6,14 @@ resources:
 configMapGenerator:
 - name: examiner-env
   literals:
-  - ECHO_VALUE="🎢 CloudLand 2023 R0ckX 🎸"
+  - "ECHO_VALUE=\"\U0001F3A2 CloudLand 2023 R0ckX \U0001F3B8\""
 replicas:
-  - name: app
-    count: 2
+- name: app
+  count: 2
 images:
-  - name: app
-    newName: "quay.io/heubeck/examiner" # {"$imagepolicy": "apps:examiner-app:name"}
-    newTag: 1.10.1 # {"$imagepolicy": "apps:examiner-app:tag"}
+- name: app
+  newName: "quay.io/heubeck/examiner" # {"$imagepolicy": "apps:examiner-app:name"}
+  newTag: 1.11.5 # {"$imagepolicy": "apps:examiner-app:tag"}
 patches:
 - patch: |-
     - op: replace

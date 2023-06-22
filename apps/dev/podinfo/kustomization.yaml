@@ -24,3 +24,11 @@ patches:
     group: image.toolkit.fluxcd.io
     kind: ImagePolicy
     version: v1beta1
+- patch: |-
+    - op: replace
+      path: /spec/imageRepositoryRef/name
+      value: "podinfo-app"
+  target:
+    group: image.toolkit.fluxcd.io
+    kind: ImagePolicy
+    version: v1beta1

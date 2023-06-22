@@ -5,7 +5,7 @@ metadata:
   name: app
 spec:
   imageRepositoryRef:
-    name: examiner-app
+    name: app
   policy:
     semver:
       range: version

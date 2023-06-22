@@ -15,3 +15,12 @@ images:
   - name: app
     newName: "quay.io/heubeck/examiner" # {"$imagepolicy": "apps:examiner-app:name"}
     newTag: 1.10.1 # {"$imagepolicy": "apps:examiner-app:tag"}
+patches:
+- patch: |-
+    - op: replace
+      path: /spec/policy/semver/range
+      value: "~1.11"
+  target:
+    group: image.toolkit.fluxcd.io
+    kind: ImagePolicy
+    version: v1beta1

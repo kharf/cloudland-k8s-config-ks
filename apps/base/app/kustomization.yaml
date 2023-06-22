@@ -9,3 +9,4 @@ resources:
 - k8s-service.yaml
 - k8s-ingress.yaml
 - flux-image-repository.yaml
+- flux-image-policy.yaml

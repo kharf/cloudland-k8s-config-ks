@@ -8,9 +8,8 @@ labels:
   includeSelectors: true
 resources:
 - ../app
-- flux-image-policy.yaml
-patchesStrategicMerge:
-- k8s-deployment.yaml
-- k8s-ingress.yaml
-- flux-image-repository.yaml
-- k8s-network-policies.yaml
+patches:
+- path: k8s-deployment.yaml
+- path: k8s-ingress.yaml
+- path: flux-image-repository.yaml
+- path: k8s-network-policies.yaml
